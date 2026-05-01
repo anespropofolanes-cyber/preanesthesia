@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻醉自費選項指南｜台中榮民總醫院 麻醉前訪中心</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #1a2332;
+  --ink-mid: #3d5068;
+  --ink-light: #7a93a8;
+  --ink-faint: #b8c8d4;
+  --accent: #1d6fa4;
+  --accent-light: #e8f3fb;
+  --accent-mid: #5295c0;
+  --teal: #1a8f7e;
+  --teal-light: #e5f5f3;
+  --surface: #f7f9fb;
+  --white: #ffffff;
+  --border: #e2eaf0;
+  --shadow-sm: 0 1px 4px rgba(26,35,50,0.06);
+  --shadow-md: 0 4px 16px rgba(26,35,50,0.09);
+  --shadow-lg: 0 8px 32px rgba(26,35,50,0.12);
+  --radius: 12px;
+  --radius-lg: 18px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  background: var(--ink);
+  color: white;
+  padding: 72px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -80px; bottom: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.08;
+}
+.hero-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin-bottom: 20px;
+}
+.hero-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--accent-mid);
+}
+.hero h1 {
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.hero h1 span { color: var(--accent-mid); }
+.hero p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+}
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hero-meta-item .meta-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.hero-meta-item .meta-val {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── NAV ────────────────────────────────────────── */
+.nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.nav-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-item {
+  padding: 15px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-light);
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+}
+.nav-item:hover { color: var(--ink); }
+.nav-item.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── LAYOUT ────────────────────────────────────── */
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+section { padding: 64px 0; }
+
+.sec-eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.sec-title {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.sec-sub {
+  font-size: 14px;
+  color: var(--ink-light);
+  max-width: 520px;
+}
+.sec-head { margin-bottom: 40px; }
+
+/* ── QUIZ ────────────────────────────────────────── */
+#quiz { background: var(--white); }
+
+.quiz-shell {
+  max-width: 680px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-track {
+  background: var(--accent);
+  height: 3px;
+  transition: width .4s ease;
+}
+
+.quiz-pad { padding: 36px 40px; }
+
+.quiz-num {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 10px;
+}
+.quiz-q {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.quiz-hint {
+  font-size: 13px;
+  color: var(--ink-light);
+  margin-bottom: 24px;
+}
+.quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media(max-width:520px){ .quiz-grid { grid-template-columns: 1fr; } }
+
+.quiz-opt {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  background: var(--white);
+  transition: border-color .15s, background .15s, transform .15s;
+  text-align: left;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); transform: translateY(-1px); }
+.quiz-opt.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+
+.opt-radio {
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--ink-faint);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .15s;
+}
+.quiz-opt.selected .opt-radio {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.quiz-opt.selected .opt-radio::after {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: white;
+}
+.opt-check {
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--ink-faint);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .15s;
+}
+.quiz-opt.selected .opt-check {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.quiz-opt.selected .opt-check::after {
+  content: '';
+  width: 8px; height: 5px;
+  border-left: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  transform: rotate(-45deg) translate(1px,-1px);
+  display: block;
+}
+
+.opt-text { flex: 1; }
+.opt-main { font-weight: 500; }
+.opt-sub { font-size: 12px; color: var(--ink-light); margin-top: 2px; }
+
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.quiz-step-lbl { font-size: 13px; color: var(--ink-light); }
+
+.btn {
+  padding: 9px 22px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  letter-spacing: 0.3px;
+}
+.btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--ink-mid); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #165d89; box-shadow: 0 4px 12px rgba(29,111,164,0.3); }
+.btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-primary:disabled:hover { box-shadow: none; background: var(--accent); }
+
+/* Result */
+.quiz-result { display: none; animation: fadeUp .4s ease; }
+.quiz-result.show { display: block; }
+.result-heading { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.result-sub { font-size: 13px; color: var(--ink-light); margin-bottom: 20px; }
+.result-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+}
+.result-item:hover { border-color: var(--accent); background: var(--accent-light); transform: translateX(4px); }
+.result-item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.result-item-text { font-size: 14px; font-weight: 500; color: var(--ink); flex: 1; }
+.result-item-arrow { color: var(--ink-faint); font-size: 14px; }
+.result-retake { font-size: 13px; color: var(--ink-light); background: none; border: none; cursor: pointer; font-family: inherit; text-decoration: underline; }
+
+/* ── ITEM CARDS ────────────────────────────────── */
+#items { background: var(--surface); }
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s, transform .2s;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.card.pulse { box-shadow: 0 0 0 3px var(--accent), var(--shadow-lg); }
+
+.card-stripe { height: 3px; }
+.card-top {
+  padding: 26px 26px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.card-icon-box {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.card-icon-box svg { width: 20px; height: 20px; }
+.card-hd { flex: 1; }
+.card-name { font-size: 17px; font-weight: 700; color: var(--ink); }
+.card-sub { font-size: 12px; color: var(--ink-light); margin-top: 2px; }
+.card-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.card-body { padding: 0 26px 20px; }
+.card-quote {
+  font-size: 13px;
+  color: var(--ink-light);
+  font-style: italic;
+  padding: 10px 14px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 14px;
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink-mid);
+  border: 1px solid var(--border);
+}
+
+.check-list { list-style: none; }
+.check-list li {
+  font-size: 13px;
+  color: var(--ink-mid);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--surface);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '';
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center; justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%231a8f7e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-note {
+  font-size: 12px;
+  color: var(--ink-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--surface);
+}
+
+.card-toggle-btn {
+  width: 100%;
+  padding: 12px 26px;
+  background: var(--surface);
+  border: none;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--ink-light);
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: color .2s, background .2s;
+  font-weight: 500;
+}
+.card-toggle-btn:hover { color: var(--accent); background: var(--accent-light); }
+
+.toggle-arrow { transition: transform .3s; }
+.toggle-arrow.open { transform: rotate(180deg); }
+
+.card-expand { display: none; padding: 0 26px 22px; border-top: 1px solid var(--border); background: var(--white); }
+.card-expand.open { display: block; animation: fadeUp .3s ease; }
+
+.faq { margin-top: 16px; }
+.faq-item { margin-bottom: 14px; }
+.faq-q {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.faq-q::before {
+  content: 'Q';
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.faq-a {
+  font-size: 13px;
+  color: var(--ink-mid);
+  padding-left: 22px;
+  line-height: 1.65;
+}
+
+/* ── PAIN ─────────────────────────────────────── */
+#pain { background: var(--white); }
+
+.pain-lead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: var(--ink-mid);
+}
+.pain-lead-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.pain-row {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.pain-row:hover { border-color: var(--accent); box-shadow: var(--shadow-sm); }
+.pain-stripe { height: 3px; }
+.pain-main { padding: 18px 18px 14px; }
+.pain-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.pain-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.pain-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.pain-badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.pain-meta { font-size: 12px; color: var(--ink-light); margin-bottom: 8px; }
+.pain-desc { font-size: 13px; color: var(--ink-mid); margin-bottom: 10px; line-height: 1.6; }
+.pain-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.pain-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; background: var(--surface); color: var(--ink-light); border: 1px solid var(--border); }
+.pain-detail {
+  display: none;
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--surface);
+  background: var(--surface);
+}
+.pain-detail.open { display: block; animation: fadeUp .25s ease; }
+.pain-detail p { font-size: 13px; color: var(--ink-mid); margin-bottom: 8px; line-height: 1.65; }
+.pain-detail strong { color: var(--ink); }
+
+/* ── FLOW ─────────────────────────────────────── */
+#flow { background: var(--surface); }
+.flow-row {
+  display: flex;
+  align-items: flex-start;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.flow-row::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: calc(22px + 20px);
+  right: calc(22px + 20px);
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+@media(max-width: 600px){
+  .flow-row { flex-direction: column; gap: 16px; }
+  .flow-row::before { display: none; }
+}
+.flow-step { flex: 1; text-align: center; padding: 0 12px; position: relative; z-index: 1; }
+.flow-bubble {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-light);
+  transition: all .2s;
+}
+.flow-step:hover .flow-bubble { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.flow-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.flow-desc { font-size: 12px; color: var(--ink-light); line-height: 1.55; }
+
+.flow-info {
+  max-width: 860px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media(max-width: 600px){ .flow-info { grid-template-columns: 1fr; } }
+.info-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.info-card-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+.info-card-list { list-style: none; }
+.info-card-list li { font-size: 13px; color: var(--ink-mid); padding: 4px 0; border-bottom: 1px solid var(--surface); display: flex; gap: 8px; align-items: flex-start; }
+.info-card-list li:last-child { border: none; }
+.info-card-list li::before { content: '—'; color: var(--ink-faint); flex-shrink: 0; }
+
+/* ── CONTACT ────────────────────────────────────── */
+#contact { background: var(--ink); color: white; }
+#contact .sec-eyebrow { color: var(--accent-mid); }
+#contact .sec-title { color: white; }
+#contact .sec-sub { color: rgba(255,255,255,0.5); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 640px;
+}
+@media(max-width: 560px){ .contact-grid { grid-template-columns: 1fr; } }
+.contact-cell {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+}
+.c-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 6px; }
+.c-val { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.9); }
+.c-val-sm { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); line-height: 1.6; }
+
+.disclaimer {
+  margin-top: 36px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── FOOTER ────────────────────────────────────── */
+footer {
+  background: #111827;
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ── 老花眼大字模式 ───────────────────────────────── */
+.large-text body,
+body.large-text {
+  font-size: 19px;
+}
+body.large-text .sec-title        { font-size: 26px; }
+body.large-text .sec-sub          { font-size: 17px; }
+body.large-text .sec-eyebrow      { font-size: 13px; }
+body.large-text .card-name        { font-size: 20px; }
+body.large-text .card-sub         { font-size: 15px; }
+body.large-text .card-body p,
+body.large-text .card-body li,
+body.large-text .card-quote       { font-size: 17px; }
+body.large-text .card-note        { font-size: 15px; }
+body.large-text .faq-q            { font-size: 16px; }
+body.large-text .faq-a            { font-size: 16px; }
+body.large-text .pain-name        { font-size: 18px; }
+body.large-text .pain-desc        { font-size: 16px; }
+body.large-text .pain-meta        { font-size: 14px; }
+body.large-text .pain-detail p,
+body.large-text .pain-detail li   { font-size: 16px; }
+body.large-text .organ-notice     { font-size: 16px; }
+body.large-text .tag, 
+body.large-text .pain-tag         { font-size: 14px; }
+body.large-text .flow-title       { font-size: 16px; }
+body.large-text .flow-desc        { font-size: 15px; }
+body.large-text .info-card-list li{ font-size: 16px; }
+body.large-text .quiz-q           { font-size: 17px; }
+body.large-text .quiz-opt         { font-size: 16px; }
+body.large-text .result-item-name { font-size: 17px; }
+body.large-text .result-item-desc { font-size: 15px; }
+body.large-text .nav-item         { font-size: 15px; }
+
+/* ── 老花眼大字模式浮動按鈕 ──────────────────────── */
+.font-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 16px rgba(29,111,164,0.35);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  transition: all .2s;
+  font-family: inherit;
+}
+.font-fab:hover {
+  background: #155d8a;
+  box-shadow: 0 6px 20px rgba(29,111,164,0.45);
+  transform: translateY(-2px);
+}
+.font-fab .fab-letters {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  line-height: 1;
+}
+.font-fab .fab-a-small {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.font-fab .fab-a-large {
+  font-size: 20px;
+  font-weight: 700;
+}
+.font-fab .fab-label {
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  line-height: 1;
+}
+body.large-text .font-fab {
+  background: var(--teal);
+  box-shadow: 0 4px 16px rgba(26,143,126,0.35);
+}
+body.large-text .font-fab:hover {
+  background: #117a6b;
+}
+
+/* ── ANIMATION ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+section { animation: fadeUp .5s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">台中榮民總醫院・麻醉前訪中心</div>
+    <h1>麻醉<span>自費選項</span>完整指南<br>術前資訊說明</h1>
+    <p>每位患者的手術需求不同。這份指南協助您在前訪前了解可選擇的項目，以便與麻醉科醫師進行更充分的討論。</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="meta-label">院內分機</span>
+        <span class="meta-val">6571</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="meta-label">地點</span>
+        <span class="meta-val">門診後棟 2 樓（客服中心旁）</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="meta-label">服務時間</span>
+        <span class="meta-val">週一至週五　08:00–18:00</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-item active" onclick="goTo('flow')">前訪流程</button>
+    <button class="nav-item" onclick="goTo('quiz')">適合我的選項</button>
+    <button class="nav-item" onclick="goTo('items')">術中保護項目</button>
+    <button class="nav-item" onclick="goTo('pain')">術後止痛方案</button>
+    <button class="nav-item" onclick="goTo('contact')">聯絡方式</button>
+  </div>
+</nav>
+
+<!-- ── 大字模式浮動按鈕 ── -->
+<button class="font-fab" id="fontFab" onclick="toggleFontSize()" title="切換大字模式">
+  <div class="fab-letters">
+    <span class="fab-a-small">A</span>
+    <span class="fab-a-large">A</span>
+  </div>
+  <div class="fab-label" id="fabLabel">大字模式</div>
+</button>
+
+<!-- ── FLOW（前訪流程，移至最前） ── -->
+<section id="flow">
+<div class="wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">就診流程</div>
+    <div class="sec-title">麻醉術前評估流程</div>
+    <div class="sec-sub">在手術前，我們會先安排您與麻醉醫師進行評估與討論，讓整個手術過程更安全、順利。</div>
+  </div>
+
+  <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:36px;font-size:14px;color:var(--ink-mid);line-height:1.8;">
+    看診前，建議您準備好相關病史或用藥資訊，若有任何疑問或擔心，也都可以放心提出。麻醉醫師會依照您的狀況，給予最適合您的建議。
+  </div>
+
+  <div class="flow-row">
+    <div class="flow-step">
+      <div class="flow-bubble">01</div>
+      <div class="flow-title">插卡報到</div>
+      <div class="flow-desc">攜帶健保卡到達，在志工協助下報到取號</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-bubble">02</div>
+      <div class="flow-title">等候填表</div>
+      <div class="flow-desc">等候叫號，並填寫身體評估問卷</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-bubble">03</div>
+      <div class="flow-title">進入診間</div>
+      <div class="flow-desc">等候診間號碼顯示後進入</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-bubble">04</div>
+      <div class="flow-title">醫師看診</div>
+      <div class="flow-desc">麻醉科醫師進行評估、衛教與自費說明</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-bubble">05</div>
+      <div class="flow-title">簽署文件</div>
+      <div class="flow-desc">簽署麻醉及自費選項同意書</div>
+    </div>
+  </div>
+  <div class="flow-info">
+    <div class="info-card">
+      <div class="info-card-label">看診時的討論重點</div>
+      <ul class="info-card-list">
+        <li>病史、用藥、過敏史確認</li>
+        <li>麻醉風險評估（ASA 分級、氣道評估）</li>
+        <li>麻醉方式說明（全麻、半麻、區域麻醉）</li>
+        <li>自費選項個別化建議</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="info-card-label">術前準備提醒</div>
+      <ul class="info-card-list">
+        <li>手術前夕禁食禁飲時間請遵醫囑</li>
+        <li>固定用藥是否繼續服用請提前詢問</li>
+        <li>如有問題歡迎致電（分機 6571）</li>
+        <li>可帶家屬一同前往共同決策</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ── QUIZ ── -->
+<section id="quiz">
+<div class="wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">互動篩選</div>
+    <div class="sec-title">適合我的選項是什麼？</div>
+    <div class="sec-sub">三個問題，初步了解哪些項目與您的狀況相關。所有建議仍需由麻醉科醫師確認。</div>
+  </div>
+  <div class="quiz-shell">
+    <div class="quiz-track" id="quizTrack" style="width:0%"></div>
+    <div class="quiz-pad">
+
+      <!-- Q1 -->
+      <div id="step0" class="quiz-step-wrap">
+        <div class="quiz-num">問題 1 / 3</div>
+        <div class="quiz-q">您的手術預計時間大約多長？</div>
+        <div class="quiz-hint">這有助於評估保溫與腦波監測的需求</div>
+        <div class="quiz-grid">
+          <button class="quiz-opt" onclick="pick(0,'short',this)">
+            <div class="opt-radio"></div>
+            <div class="opt-text"><div class="opt-main">30 分鐘以內</div><div class="opt-sub">門診手術・小型手術</div></div>
+          </button>
+          <button class="quiz-opt" onclick="pick(0,'mid',this)">
+            <div class="opt-radio"></div>
+            <div class="opt-text"><div class="opt-main">1 至 3 小時</div><div class="opt-sub">中等規模手術</div></div>
+          </button>
+          <button class="quiz-opt" onclick="pick(0,'long',this)">
+            <div class="opt-radio"></div>
+            <div class="opt-text"><div class="opt-main">3 小時以上</div><div class="opt-sub">大型手術</div></div>
+          </button>
+          <button class="quiz-opt" onclick="pick(0,'unknown',this)">
+            <div class="opt-radio"></div>
+            <div class="opt-text"><div class="opt-main">尚不確定</div><div class="opt-sub">待與主治醫師確認</div></div>
+          </button>
+        </div>
+        <div class="quiz-footer">
+          <span class="quiz-step-lbl">請選擇一項</span>
+          <button class="btn btn-primary" id="next0" onclick="gotoStep(1)" disabled>繼續</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div id="step1" class="quiz-step-wrap" style="display:none">
+        <div class="quiz-num">問題 2 / 3</div>
+        <div class="quiz-q">您有以下哪些狀況？</div>
+        <div class="quiz-hint">可複選，選完後點「繼續」</div>
+        <div class="quiz-grid">
+          <button class="quiz-opt" onclick="toggle(this,'elderly')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">65 歲以上</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'ponv')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">曾有術後噁心嘔吐</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'cold')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">對冷敏感 / 曾術後發抖</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'brain')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">有腦部相關病史</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'female')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">女性</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'none2')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">以上皆無</div></div>
+          </button>
+        </div>
+        <div class="quiz-footer">
+          <button class="btn btn-outline" onclick="gotoStep(0)">上一題</button>
+          <button class="btn btn-primary" onclick="gotoStep(2)">繼續</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div id="step2" class="quiz-step-wrap" style="display:none">
+        <div class="quiz-num">問題 3 / 3</div>
+        <div class="quiz-q">術後您最在意什麼？</div>
+        <div class="quiz-hint">可複選</div>
+        <div class="quiz-grid">
+          <button class="quiz-opt" onclick="toggle(this,'pain_c')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">擔心術後疼痛</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'nausea_c')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">不想噁心嘔吐</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'wake_c')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">希望清醒快一點</div></div>
+          </button>
+          <button class="quiz-opt" onclick="toggle(this,'recover_c')">
+            <div class="opt-check"></div>
+            <div class="opt-text"><div class="opt-main">希望恢復速度快</div></div>
+          </button>
+        </div>
+        <div class="quiz-footer">
+          <button class="btn btn-outline" onclick="gotoStep(1)">上一題</button>
+          <button class="btn btn-primary" onclick="showResult()">查看建議</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div id="quizResult" class="quiz-result">
+        <div class="result-heading">根據您的回答，以下項目值得了解</div>
+        <div class="result-sub">點選項目可跳至詳細說明。所有選項請與麻醉科醫師確認是否適合。</div>
+        <div class="result-items" id="resultItems"></div>
+        <button class="result-retake" onclick="resetQuiz()">重新填寫</button>
+      </div>
+
+    </div><!-- quiz-pad -->
+  </div><!-- quiz-shell -->
+</div>
+</section>
+
+<!-- ── ITEMS ── -->
+<section id="items">
+<div class="wrap">
+
+  <!-- 自費說明引言 -->
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 28px 24px;margin-bottom:40px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal))"></div>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">
+      麻醉就像搭飛機，大家的最終目的地都是一樣的——<strong style="color:var(--ink)">安全甦醒，順利完成手術</strong>。
+      選擇自費，就像從經濟艙升等到商務艙：不影響能否抵達，但<strong style="color:var(--ink)">過程會更舒適</strong>。
+    </p>
+    <p style="font-size:14px;line-height:1.8;color:var(--ink-light);">
+      這些自費選項能幫助病人減少手術中的不適，例如不怕冷、降低噁心嘔吐、減輕疼痛，也能讓人更安心，不再那麼害怕睡不醒。
+      不使用也完全沒有關係，所有選項完全依照您的需求與醫師評估決定。
+    </p>
+  </div>
+
+  <div class="sec-head">
+    <div class="sec-eyebrow">術中保護</div>
+    <div class="sec-title">可選擇的術中保護項目</div>
+    <div class="sec-sub">這些項目針對特定風險族群，並非每位患者都必要。醫師將依您的評估結果提供建議。</div>
+  </div>
+  <div class="items-grid">
+
+    <!-- 腦波監測 -->
+    <div class="card" id="card-bis">
+      <div class="card-stripe" style="background:var(--accent)"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:var(--accent-light)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+            <path d="M8 12h2l2-4 2 8 2-4h2"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">麻醉腦波監測</div>
+          <div class="card-sub">BIS／SedLine 監測系統</div>
+        </div>
+        <div class="card-tag" style="background:var(--accent-light);color:var(--accent)">術中監控</div>
+      </div>
+      <div class="card-body">
+        <div class="card-quote">「麻醉不只是睡覺，更是腦部的守護。精準麻醉，從腦波開始。」</div>
+        <div class="label">建議對象</div>
+        <div class="tag-row">
+          <span class="tag">65 歲以上</span>
+          <span class="tag">曾有術後譫妄</span>
+          <span class="tag">手術 &gt; 3 小時</span>
+          <span class="tag">腦部病史</span>
+          <span class="tag">希望清醒較快</span>
+        </div>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>即時觀察腦部活動，減少麻醉過深的風險</li>
+          <li>術中精準調整麻醉濃度，避免多餘用藥</li>
+          <li>有助於提升術後清醒速度與舒適度</li>
+        </ul>
+        <div class="card-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 1,645</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('bis')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-bis" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-bis">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">腦波監測是什麼？</div>
+            <div class="faq-a">貼附於前額的感應器，可即時監測您在麻醉下的腦部活動，讓醫師能更精準控制麻醉深度。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">每個人都需要嗎？</div>
+            <div class="faq-a">不是。特別建議年長、長時間手術或有腦部病史的患者考慮。一般短時間手術的年輕患者風險較低。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">有侵入性嗎？</div>
+            <div class="faq-a">無侵入性，感應器僅貼附在皮膚表面，安全無風險，可隨時移除。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 止吐藥 -->
+    <div class="card" id="card-ponv">
+      <div class="card-stripe" style="background:#e07040"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:#fef0e8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#e07040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22c-4 0-7-2.5-7-7 0-3 1.5-6 4-8.5L12 3l3 3.5C17.5 9 19 12 19 15c0 4.5-3 7-7 7z"/>
+            <path d="M9 17c.5 1 1.5 1.5 3 1.5"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">術中止吐藥</div>
+          <div class="card-sub">PONV 預防性用藥</div>
+        </div>
+        <div class="card-tag" style="background:#fef0e8;color:#e07040">術後舒適</div>
+      </div>
+      <div class="card-body">
+        <div class="card-quote">「預防勝於治療——在噁心發生前主動介入，讓術後更舒適。」</div>
+        <div class="label">高風險族群（PONV）</div>
+        <div class="tag-row">
+          <span class="tag">女性</span>
+          <span class="tag">有術後嘔吐史</span>
+          <span class="tag">非吸菸者</span>
+          <span class="tag">使用吸入性麻醉</span>
+          <span class="tag">使用類鴉片止痛</span>
+        </div>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>術前預防性給藥，有效降低術後噁心嘔吐發生率</li>
+          <li>減少術後不適，有助食慾恢復與傷口癒合</li>
+          <li>提升整體術後體驗與復原速度</li>
+        </ul>
+        <div class="card-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 130</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('ponv')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-ponv" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-ponv">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">我需要加止吐藥嗎？</div>
+            <div class="faq-a">醫師會協助評估您的 PONV 風險等級（通常以 Apfel Score 計算），風險較高者較建議預防性使用。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">不加會怎樣？</div>
+            <div class="faq-a">部分患者即使不加也不會有問題，但高風險族群術後噁心嘔吐機率顯著較高，預防效果遠比事後處理好。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">藥物副作用？</div>
+            <div class="faq-a">術中預防性止吐藥經過嚴格評估，副作用少且可控。醫師會根據您的用藥史選擇最合適的藥物。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 保溫毯 -->
+    <div class="card" id="card-warm">
+      <div class="card-stripe" style="background:var(--teal)"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:var(--teal-light)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">術中保溫毯</div>
+          <div class="card-sub">主動式體溫維持系統</div>
+        </div>
+        <div class="card-tag" style="background:var(--teal-light);color:var(--teal)">體溫保護</div>
+      </div>
+      <div class="card-body">
+        <div class="card-quote">「麻醉會讓體溫調節功能暫時失效——主動保溫，是預防術中低體溫的有效措施。」</div>
+        <div class="label">建議對象</div>
+        <div class="tag-row">
+          <span class="tag">手術 &gt; 1 小時</span>
+          <span class="tag">年長者</span>
+          <span class="tag">有出血風險</span>
+          <span class="tag">大量灌洗液手術</span>
+          <span class="tag">對冷敏感</span>
+        </div>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>預防術中低體溫及相關併發症（如凝血功能下降）</li>
+          <li>降低手術部位感染風險</li>
+          <li>減少術後寒顫與不適感</li>
+          <li>有助加速術後傷口癒合</li>
+        </ul>
+        <div class="card-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 2,000</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('warm')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-warm" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-warm">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">我不覺得冷，為什麼需要保溫？</div>
+            <div class="faq-a">麻醉後身體的體溫調節功能會暫時受抑制，加上手術室溫度偏低與暴露體表，即使您平常不怕冷，術中仍可能出現低體溫。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">會不會過熱？</div>
+            <div class="faq-a">這是精準控溫設備，維持在安全舒適的溫度範圍內，目的是維持正常體溫而非過度加熱。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">短時間手術需要嗎？</div>
+            <div class="faq-a">30 分鐘以內的短時間手術風險相對較低；但時間較長、年長或體質特殊的患者，建議認真考慮。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NMT 肌肉功能恢復監測 -->
+    <div class="card" id="card-nmt">
+      <div class="card-stripe" style="background:#6b5ea8"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:#f0eeff">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6b5ea8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">肌肉功能恢復監測</div>
+          <div class="card-sub">Bridion（Sugammadex）+ NMT 監測組合</div>
+        </div>
+        <div class="card-tag" style="background:#f0eeff;color:#6b5ea8">安全甦醒</div>
+      </div>
+      <div class="card-body">
+        <div class="card-quote">「手術結束像飛機降落——Bridion 讓飛機順利著陸，NMT 確認輪子真的著地、煞車正常。」</div>
+        <div class="label">建議對象</div>
+        <div class="tag-row">
+          <span class="tag">全身麻醉手術</span>
+          <span class="tag">長時間手術</span>
+          <span class="tag">65 歲以上</span>
+          <span class="tag">呼吸道敏感</span>
+          <span class="tag">重視恢復品質</span>
+        </div>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>Bridion 直接包覆肌鬆藥，<strong>快速且完整</strong>逆轉肌肉鬆弛——避免看似清醒卻仍有呼吸或吞嚥困難的「殘餘肌肉鬆弛」風險</li>
+          <li>NMT 透過電刺激與 TOF 數據，客觀確認肌肉恢復達安全標準（≥ 0.9）——不靠感覺，用數字驗證</li>
+          <li>一個負責恢復，一個負責驗證——提升甦醒安全，降低術後嗆咳與呼吸風險</li>
+        </ul>
+        <div class="card-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 6,000</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('nmt')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-nmt" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-nmt">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">什麼是「殘餘肌肉鬆弛」？</div>
+            <div class="faq-a">全身麻醉中常使用肌肉鬆弛藥協助插管與手術操作。手術結束後，若肌肉功能未完全恢復，即使病人看起來已清醒，仍可能出現呼吸不順、吞嚥困難或嗆咳等風險。傳統上靠血壓、心跳或外觀判斷，容易誤判。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Bridion 和傳統逆轉藥有什麼不同？</div>
+            <div class="faq-a">傳統逆轉藥（如 Neostigmine）作用間接，逆轉不完全且副作用較多。Bridion（Sugammadex）可直接「包覆」rocuronium / vecuronium，快速且完整地恢復肌肉功能，更安全、更穩定。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">NMT 監測是怎麼進行的？</div>
+            <div class="faq-a">NMT 透過輕微電刺激手部神經，觀察拇指肌肉的收縮反應（TOF ratio），客觀量化肌肉恢復程度。不依賴外觀或感覺判斷，而是用數據確認是否達到安全標準。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">為什麼兩者要搭配使用？</div>
+            <div class="faq-a">單獨使用逆轉藥無法確認是否真正達到安全標準；NMT 則提供客觀數據驗證。兩者搭配——一個負責恢復，一個負責驗證——才能完整保護甦醒安全。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 進階呼吸道安全設備 -->
+    <div class="card" id="card-airway">
+      <div class="card-stripe" style="background:#2e86ab"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:#e8f4f8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2e86ab" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">進階呼吸道安全設備</div>
+          <div class="card-sub">影像喉鏡・纖維支氣管鏡・困難氣道備援</div>
+        </div>
+        <div class="card-tag" style="background:#e8f4f8;color:#2e86ab">呼吸安全</div>
+      </div>
+      <div class="card-body">
+        <div class="card-quote">「麻醉最重要的不是讓病人睡著，而是確保他在整個過程中，每一口呼吸都安全。」</div>
+        <div class="label">特別建議族群</div>
+        <div class="tag-row">
+          <span class="tag">頸部活動受限</span>
+          <span class="tag">肥胖</span>
+          <span class="tag">曾有困難插管</span>
+          <span class="tag">張口困難</span>
+          <span class="tag">預期氣道較困難</span>
+        </div>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>影像喉鏡讓氣道結構<strong>清楚可見</strong>——傳統插管像在黑暗中開車，影像設備是打開車燈加導航</li>
+          <li>提高插管成功率，降低多次嘗試造成的喉嚨不適與術後併發症</li>
+          <li>讓「困難」變成「可預期」——在少數氣道挑戰情況下，顯著提升整體麻醉安全性</li>
+        </ul>
+        <div class="card-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 980</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('airway')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-airway" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-airway">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">「進階呼吸道」是指什麼設備？</div>
+            <div class="faq-a">包含影像喉鏡（Video laryngoscope）、纖維支氣管鏡（Fiberoptic bronchoscope）及其他困難氣道備援工具。這些設備可提供即時影像，讓醫師清楚看到氣道結構，不再依賴傳統「直接視野」的判斷方式。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">哪些人的氣道比較困難？</div>
+            <div class="faq-a">氣道結構因人而異。頸部活動受限、張口度不足、肥胖、下巴較短或曾被告知插管困難的患者，屬於較高風險族群。麻醉科醫師在前訪時會進行氣道評估，提前規劃最適合的處置方式。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">傳統插管不夠安全嗎？</div>
+            <div class="faq-a">傳統插管對大多數患者是安全且有效的。進階設備的目的不是取代傳統方式，而是在可預期的困難情況下提供更多保障——讓醫師有更清晰的視野與更充分的備援工具。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">進階呼吸道設備會讓插管過程不舒服嗎？</div>
+            <div class="faq-a">不會。進階設備的操作過程與傳統插管相似，差異在於提供影像輔助。在全身麻醉下，患者不會感受到插管過程。術後喉嚨不適通常與插管次數有關，而非使用的設備類型。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANI 疼痛監測（需醫師評估，不主動推薦） -->
+    <div class="card" id="card-ani" style="opacity:0.82;">
+      <div class="card-stripe" style="background:#9aa8b2"></div>
+      <div class="card-top">
+        <div class="card-icon-box" style="background:#f2f4f6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6b7f8e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/>
+            <path d="M12 8v4l2 2"/>
+            <path d="M8 3.5C9.2 3 10.6 2.7 12 2.7"/>
+          </svg>
+        </div>
+        <div class="card-hd">
+          <div class="card-name">ANI 疼痛監測</div>
+          <div class="card-sub">Analgesia Nociception Index</div>
+        </div>
+        <div class="card-tag" style="background:#f0f2f4;color:#6b7f8e">需醫師評估</div>
+      </div>
+      <div class="card-body">
+        <div style="font-size:12px;padding:6px 12px;background:#f5f6f7;border-radius:6px;color:#8a9aa6;margin-bottom:14px;display:inline-block;">此項目由麻醉醫師依個別狀況評估，不主動建議所有患者使用。如有興趣請於前訪時主動詢問。</div>
+        <div class="card-quote">「一般麻醉像是在猜病人的感覺，ANI 像是幫醫師戴上一副耳機——可以聽見身體的壓力訊號。」</div>
+        <div class="label">什麼是 ANI？</div>
+        <p style="font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:12px;">
+          ANI 透過心率變異（HRV）分析，即時評估病人在麻醉中「疼痛與止痛的平衡」。在麻醉過程中，病人無法表達疼痛，傳統上多依賴血壓與心跳變化判斷，但這些往往已是較晚期的反應。<strong>ANI 可以更早偵測身體對疼痛的反應，讓止痛調整更即時、更精準。</strong>
+        </p>
+        <div class="label">主要效益</div>
+        <ul class="check-list">
+          <li>避免止痛不足——減少術中壓力反應，降低術後疼痛加劇的風險</li>
+          <li>避免止痛過多——降低噁心、嘔吐、呼吸抑制與恢復延遲的機率</li>
+          <li>提供客觀數據——協助醫師將止痛調整到「剛剛好」的平衡點</li>
+        </ul>
+        <div class="label">特別適合族群</div>
+        <div class="tag-row">
+          <span class="tag">兒童</span>
+          <span class="tag">高齡病人</span>
+          <span class="tag">對疼痛較敏感</span>
+          <span class="tag">長時間手術</span>
+          <span class="tag">高焦慮病人</span>
+        </div>
+        <div class="card-note" style="margin-top:16px;">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg>
+          <strong style="color:var(--ink-mid)">NT$ 5,200</strong>・費用如有異動以前訪中心公告為準
+        </div>
+      </div>
+      <button class="card-toggle-btn" onclick="toggleExpand('ani')">
+        常見問題
+        <svg class="toggle-arrow" id="arrow-ani" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+      <div class="card-expand" id="exp-ani">
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-q">ANI 和一般生命徵象監測有什麼不同？</div>
+            <div class="faq-a">血壓、心跳的變化通常是疼痛刺激後「已經發生」的反應，屬於較晚期的訊號。ANI 透過心率變異分析，可以在身體出現明顯變化之前，就偵測到疼痛壓力的趨勢，讓醫師有更多時間提前調整。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">為什麼不是每個人都需要？</div>
+            <div class="faq-a">對於一般短時間、低風險手術的患者，傳統監測方式已經足夠。ANI 在疼痛反應難以預測、或需要精細控制止痛平衡的情況下更有價值，適合與麻醉醫師討論是否需要。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">ANI 有侵入性嗎？</div>
+            <div class="faq-a">無侵入性。透過貼附於皮膚的感應器擷取心率訊號進行分析，不需要額外的穿刺或置管。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">ANI 數值代表什麼？</div>
+            <div class="faq-a">ANI 數值介於 0 至 100，數值越高代表止痛越充足、身體壓力越小。麻醉中目標通常維持在 50 以上，醫師會根據數值即時調整止痛藥物用量。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+<section id="pain">
+<div class="wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">術後止痛</div>
+    <div class="sec-title">術後止痛方案</div>
+    <div class="sec-sub">依手術類型、個人體質與需求，選擇最合適的止痛組合。點選各方案查看詳細說明。</div>
+  </div>
+
+  <!-- 腎臟/心臟篩選器 -->
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;" id="organScreener">
+    <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px;">個人化止痛篩選</div>
+    <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;">您是否有以下狀況？</div>
+    <div style="font-size:13px;color:var(--ink-light);margin-bottom:16px;">選擇後，下方各項止痛方案將顯示對應的注意事項。</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;padding:10px 16px;border-radius:8px;border:1.5px solid var(--border);transition:all .15s;background:var(--white);" id="lbl-kidney">
+        <input type="checkbox" id="chk-kidney" onchange="updateOrganFlags()" style="accent-color:var(--accent);width:15px;height:15px;">
+        腎功能不全 / 慢性腎臟病 / 洗腎
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;padding:10px 16px;border-radius:8px;border:1.5px solid var(--border);transition:all .15s;background:var(--white);" id="lbl-heart">
+        <input type="checkbox" id="chk-heart" onchange="updateOrganFlags()" style="accent-color:var(--accent);width:15px;height:15px;">
+        冠心症 / 曾有心肌梗塞 / 目前使用抗凝血劑
+      </label>
+    </div>
+    <div id="organ-global-notice" style="display:none;margin-top:16px;padding:14px 16px;background:#fff8ec;border-left:3px solid #d4a017;border-radius:0 8px 8px 0;font-size:13px;color:#6b4c00;line-height:1.75;">
+      <strong style="display:block;margin-bottom:4px;">提醒</strong>
+      您勾選的狀況與部分止痛藥物有相關注意事項，已在下方各選項中標示。所有止痛方案仍需由麻醉科醫師依個人狀況評估，請於前訪時主動告知。
+    </div>
+  </div>
+
+  <div class="pain-lead">
+    <div class="pain-lead-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    </div>
+    <div>每一種止痛方式各有適應症與禁忌症，最終方案將由麻醉科醫師依您的手術與體質個別建議，並非所有選項都適合每位患者。</div>
+  </div>
+  <div class="pain-grid">
+
+    <!-- Epidural PCA -->
+    <div class="pain-row" onclick="togglePainDetail('ep')">
+      <div class="pain-stripe" style="background:var(--accent)"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:var(--accent)"></div>
+          <div class="pain-name">Epidural PCA</div>
+          <div class="pain-badge" style="background:var(--accent-light);color:var(--accent)">硬膜外自控</div>
+        </div>
+        <div class="pain-meta">持續定量給藥・長效止痛</div>
+        <div class="pain-desc">透過硬膜外導管持續輸注止痛藥，直接作用於脊椎附近神經，適合下半身或大型腹腔手術。</div>
+        <div class="pain-tags"><span class="pain-tag">下半身手術</span><span class="pain-tag">長效需求</span><span class="pain-tag">婦科・泌尿</span></div>
+      </div>
+      <div class="pain-detail" id="pd-ep">
+        <p><strong>機制：</strong>導管置於硬膜外腔，持續提供止痛藥，效果集中且全身副作用少。</p>
+        <p><strong>特點：</strong>止痛效果強、持久，適合需要較長術後止痛時間的患者。患者也可在一定範圍內自行追加劑量。</p>
+        <p><strong>注意：</strong>需要置放導管，有特定禁忌症（如凝血功能異常），術前評估會確認是否適合。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          硬膜外止痛屬於區域止痛，通常不像 NSAIDs 那樣直接增加腎臟負擔，對腎功能不佳者反而是可考慮的選項之一。若同時有循環不穩或脫水情形，仍需由醫師整體評估。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          硬膜外止痛本身對冠心症患者影響有限，但若您目前使用抗凝血劑（如 Warfarin、Xarelto、Eliquis 等），硬膜外導管的置放與移除時機需特別注意，醫師會依用藥評估安全窗口。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 8,500</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- IV PCA -->
+    <div class="pain-row" onclick="togglePainDetail('iv')">
+      <div class="pain-stripe" style="background:#3aaea4"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#3aaea4"></div>
+          <div class="pain-name">IV PCA</div>
+          <div class="pain-badge" style="background:#e5f5f3;color:#1a8f7e">靜脈自控</div>
+        </div>
+        <div class="pain-meta">按需自控給藥・靜脈輸注</div>
+        <div class="pain-desc">透過靜脈輸注，患者可按鍵自控止痛，內建安全間隔設計，適合全身手術。</div>
+        <div class="pain-tags"><span class="pain-tag">全身手術</span><span class="pain-tag">自主控制</span><span class="pain-tag">通用選項</span></div>
+      </div>
+      <div class="pain-detail" id="pd-iv">
+        <p><strong>機制：</strong>透過靜脈幫浦持續給基礎量，並允許患者在疼痛時自行按鍵追加，系統設定安全上限。</p>
+        <p><strong>常見問題 — 會按過量嗎？</strong>不會。PCA 裝置內建安全間隔時間（lock-out interval），按了也不會超量。</p>
+        <p><strong>注意：</strong>需要攜帶幫浦，通常使用 1–3 天後由護理師拔除。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          幫浦內若含嗎啡類藥物，其代謝物在腎功能不佳時可能蓄積，增加嗜睡與呼吸抑制風險。腎功能不全者通常需要調整藥物種類、劑量與監測頻率，請告知醫師。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          鴉片類止痛藥可能輕微影響循環，冠心症患者使用時醫師會選擇對心臟負擔較小的藥物種類。抗凝血劑本身不影響此方案的使用，但請告知醫師目前用藥。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 7,000</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- Dynastat -->
+    <div class="pain-row" onclick="togglePainDetail('dy')">
+      <div class="pain-stripe" style="background:#e07040"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#e07040"></div>
+          <div class="pain-name">Dynastat（Parecoxib）</div>
+          <div class="pain-badge" style="background:#fef0e8;color:#e07040">注射型 COX-2</div>
+        </div>
+        <div class="pain-meta">抗發炎止痛・針對腫脹疼痛</div>
+        <div class="pain-desc">注射型非類固醇抗發炎藥，特別針對術後組織腫脹與發炎性疼痛。</div>
+        <div class="pain-tags"><span class="pain-tag">骨科手術</span><span class="pain-tag">關節手術</span><span class="pain-tag">組織腫痛</span></div>
+      </div>
+      <div class="pain-detail" id="pd-dy">
+        <p><strong>機制：</strong>選擇性抑制 COX-2 酶，減少前列腺素合成，達到抗發炎止痛效果。</p>
+        <p><strong>優點：</strong>非類鴉片藥物，腸胃刺激性較傳統止痛藥低，可與其他止痛藥合用達到多模式止痛效果。</p>
+        <p><strong>注意：</strong>有心血管病史或腎功能不全者請告知醫師，部分情況下禁用。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;color:#c0392b;">腎臟功能注意（請主動告知醫師）</strong>
+          COX-2 抑制劑仍可能影響腎血流，慢性腎臟病、脫水、年長、使用利尿劑或 ACEI/ARB 的患者，較易出現腎功能惡化。部分情況下為禁忌，請務必告知醫師。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;color:#c0392b;">冠心症 / 抗凝血劑注意（請主動告知醫師）</strong>
+          COX-2 抑制劑與心血管事件風險有關，有冠心症或心肌梗塞病史者使用前需特別審慎評估，醫師可能建議改用其他止痛策略。若同時使用抗凝血劑，與 NSAIDs 類藥物合用可能增加出血風險，請務必告知醫師。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 700</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- One Day Pain -->
+    <div class="pain-row" onclick="togglePainDetail('od')">
+      <div class="pain-stripe" style="background:#6dbf8a"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#6dbf8a"></div>
+          <div class="pain-name">One Day Pain</div>
+          <div class="pain-badge" style="background:#edf9f0;color:#3a9a5a">日間手術</div>
+        </div>
+        <div class="pain-meta">Acetaminophen × 2 + Dynastat × 1</div>
+        <div class="pain-desc">整合型術後止痛套裝，無需攜帶幫浦，適合日間手術或短期住院患者。</div>
+        <div class="pain-tags"><span class="pain-tag">日間手術</span><span class="pain-tag">短期住院</span><span class="pain-tag">無需帶機器</span></div>
+      </div>
+      <div class="pain-detail" id="pd-od">
+        <p><strong>組合：</strong>兩種不同機制的止痛藥合用（乙醯胺酚 + COX-2 抑制劑），達到加乘止痛效果。</p>
+        <p><strong>優點：</strong>用藥方式簡便，不需攜帶幫浦回房，適合計劃當日或隔日出院的患者。</p>
+        <p><strong>適合：</strong>小至中型手術、門診手術或日間手術中心患者。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;color:#c0392b;">腎臟功能注意（請主動告知醫師）</strong>
+          組合中的 Dynastat（Parecoxib）對腎臟有一定限制，腎功能不全者可能禁用。Acetaminophen 在嚴重腎功能不全時也可能需要拉長間隔或降低劑量，請告知醫師評估。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;color:#c0392b;">冠心症 / 抗凝血劑注意（請主動告知醫師）</strong>
+          組合中的 Dynastat 對冠心症或有心肌梗塞病史者有心血管風險考量，醫師會評估是否適合。若您使用抗凝血劑，合併 COX-2 抑制劑可能增加出血風險，請告知醫師。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 1,680</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- 神經阻斷 -->
+    <div class="pain-row" onclick="togglePainDetail('nb')">
+      <div class="pain-stripe" style="background:#a87dc2"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#a87dc2"></div>
+          <div class="pain-name">神經阻斷</div>
+          <div class="pain-badge" style="background:#f5eeff;color:#a87dc2">區域止痛</div>
+        </div>
+        <div class="pain-meta">ESP・PIFB・FICB 等超音波導引神經阻斷</div>
+        <div class="pain-desc">超音波導引下精準注射局部麻醉藥，長效封鎖局部痛覺傳導，術後不影響意識清醒度。</div>
+        <div class="pain-tags"><span class="pain-tag">胸腹手術</span><span class="pain-tag">下肢手術</span><span class="pain-tag">長效局部止痛</span></div>
+      </div>
+      <div class="pain-detail" id="pd-nb">
+        <p><strong>機制：</strong>在超音波導引下，將局部麻醉藥注射至目標神經附近，直接封鎖痛覺傳導。</p>
+        <p><strong>優點：</strong>止痛效果強且持久，不影響意識，利於術後早期活動與復健。全身副作用少。</p>
+        <p><strong>適合：</strong>依手術部位選擇不同阻斷方式，如 ESP（胸背筋膜阻斷）、FICB（髂筋膜阻斷）等。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          神經阻斷屬局部區域止痛，通常不直接增加腎臟負擔，對腎功能不佳者往往是值得考慮的選項之一。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          神經阻斷通常對冠心症患者是安全的選項，減少全身鴉片類藥物用量反而對心臟有利。若您使用抗凝血劑，神經阻斷的時機需配合停藥窗口，醫師會提前安排評估。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 4,200</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- Remifentanil -->
+    <div class="pain-row" onclick="togglePainDetail('rf')">
+      <div class="pain-stripe" style="background:#c8a030"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#c8a030"></div>
+          <div class="pain-name">Remifentanil 延時止痛</div>
+          <div class="pain-badge" style="background:#fdf6e3;color:#a08020">清醒過渡</div>
+        </div>
+        <div class="pain-meta">手術結束至完全清醒的止痛過渡</div>
+        <div class="pain-desc">讓患者在麻醉恢復期間保持有效止痛覆蓋，避免清醒瞬間陡然疼痛的不適。</div>
+        <div class="pain-tags"><span class="pain-tag">預期較痛手術</span><span class="pain-tag">平順清醒</span></div>
+      </div>
+      <div class="pain-detail" id="pd-rf">
+        <p><strong>機制：</strong>Remifentanil 屬超短效類鴉片，代謝極快。延時止痛策略在手術結束後維持短暫有效濃度，銜接至其他止痛藥起效。</p>
+        <p><strong>目的：</strong>避免患者從麻醉中清醒時出現劇烈疼痛驚醒（hyperalgesia），讓恢復過程更平順。</p>
+        <p><strong>適合：</strong>預期術後疼痛較強烈、或對術後陡然疼痛有疑慮的患者。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          Remifentanil 代謝不依賴腎臟，腎功能不佳者相對不易蓄積，這是此藥的優勢之一。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          Remifentanil 代謝快、可精細調控，對冠心症患者而言相對可控，但仍可能造成短暫血壓下降，醫師會密切監測。抗凝血劑與此藥無直接交互作用，不影響使用。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 500</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- Byfavo -->
+    <div class="pain-row" onclick="togglePainDetail('bf')">
+      <div class="pain-stripe" style="background:#e87fa0"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#e87fa0"></div>
+          <div class="pain-name">Byfavo（Remimazolam）</div>
+          <div class="pain-badge" style="background:#ffeef5;color:#c06080">加速清醒</div>
+        </div>
+        <div class="pain-meta">新型短效鎮靜藥・有專屬解毒劑</div>
+        <div class="pain-desc">新一代短效鎮靜藥物，代謝快、有專屬拮抗劑，術後清醒較快且頭腦較清晰。</div>
+        <div class="pain-tags"><span class="pain-tag">希望清醒快</span><span class="pain-tag">減少遲鈍感</span><span class="pain-tag">有解毒劑</span></div>
+      </div>
+      <div class="pain-detail" id="pd-bf">
+        <p><strong>機制：</strong>作用於 GABA 受體，代謝速度快於傳統苯二氮平類藥物，且有專屬拮抗劑（Flumazenil）可快速逆轉效果。</p>
+        <p><strong>優點：</strong>術後清醒較快、遲鈍感較少、噁心發生率較低，整體恢復品質較佳。</p>
+        <p><strong>適合：</strong>希望術後快速清醒恢復、或對傳統麻醉藥物有過多遲鈍感的患者。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          Byfavo 本身不屬於直接傷腎的藥物，但若整體狀況差、循環脆弱，仍需醫師整體評估。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          Byfavo 合併鴉片類藥物時可能造成短暫血壓下降，冠心症患者使用時醫師會加強監測。抗凝血劑與此藥無直接交互作用，不影響使用。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 1,200</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+    <!-- Nalbuphine -->
+    <div class="pain-row" onclick="togglePainDetail('na')">
+      <div class="pain-stripe" style="background:#7a93a8"></div>
+      <div class="pain-main">
+        <div class="pain-head">
+          <div class="pain-dot" style="background:#7a93a8"></div>
+          <div class="pain-name">Nalbuphine</div>
+          <div class="pain-badge" style="background:#f0f4f8;color:#7a93a8">拮抗型</div>
+        </div>
+        <div class="pain-meta">混合型類鴉片・止痛不過度鎮靜</div>
+        <div class="pain-desc">具止痛效果但鎮靜與成癮風險較低，適合對強效類鴉片副作用敏感的患者。</div>
+        <div class="pain-tags"><span class="pain-tag">容易暈吐</span><span class="pain-tag">止痛不嗜睡</span><span class="pain-tag">副作用敏感</span></div>
+      </div>
+      <div class="pain-detail" id="pd-na">
+        <p><strong>機制：</strong>屬混合型類鴉片藥物（κ 受體致效 / μ 受體拮抗），止痛效果好，但呼吸抑制與成癮風險低於純 μ 受體藥物。</p>
+        <p><strong>優點：</strong>止痛同時保有較多清醒度，不易過度嗜睡，噁心嘔吐副作用亦較少。</p>
+        <p><strong>適合：</strong>對強效止痛藥（如嗎啡）副作用敏感，但仍有止痛需求的患者。</p>
+        <div class="organ-notice kidney-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#eef6fb;border-left:3px solid #5295c0;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">腎臟功能注意</strong>
+          Nalbuphine 經肝代謝、由腎臟排出。腎功能不佳者使用時需小心，可能需要減量；不是不能用，但請告知醫師，由醫師評估劑量與監測方式。
+        </div>
+        <div class="organ-notice heart-notice" style="display:none;margin-top:10px;padding:12px 14px;background:#fdf0f0;border-left:3px solid #c0555a;border-radius:0 8px 8px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;">
+          <strong style="display:block;margin-bottom:3px;">冠心症 / 抗凝血劑注意</strong>
+          有冠心症或曾發生心肌梗塞者，使用時醫師會評估循環狀態並調整劑量。抗凝血劑與此藥無直接交互作用，但仍請告知醫師完整用藥清單。
+        </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--surface);border-radius:6px;font-size:13px;color:var(--ink-mid);display:flex;align-items:center;gap:6px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><path d="M8 7v4M8 5.5v.01"/></svg><strong style="color:var(--ink-mid)">NT$ 12,000</strong>・費用如有異動以前訪中心公告為準</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+<div class="wrap">
+  <div class="sec-head">
+    <div class="sec-eyebrow">聯絡方式</div>
+    <div class="sec-title">麻醉術前訪視中心</div>
+    <div class="sec-sub">手術前如有任何問題，歡迎來電或親自前往諮詢</div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-cell">
+      <div class="c-label">院內分機</div>
+      <div class="c-val">6571</div>
+    </div>
+    <div class="contact-cell">
+      <div class="c-label">地點</div>
+      <div class="c-val-sm">門診後棟 2 樓<br>（客服中心旁）</div>
+    </div>
+    <div class="contact-cell">
+      <div class="c-label">服務時間</div>
+      <div class="c-val-sm">週一至週五<br>08:00 – 18:00</div>
+    </div>
+  </div>
+  <div class="disclaimer">
+    本頁面內容僅供術前衛教參考，所有自費選項均需由麻醉科醫師依個人狀況評估後決定。實際建議與費用以前訪中心說明為準。如有疑問，請來電或親至本中心諮詢。
+  </div>
+</div>
+</section>
+
+<footer>
+  台中榮民總醫院・麻醉前訪中心 ｜ 麻醉自費選項指南
+</footer>
+
+<script>
+// ─ 老花眼大字模式 ─
+function toggleFontSize() {
+  const isLarge = document.body.classList.toggle('large-text');
+  document.getElementById('fabLabel').textContent = isLarge ? '縮小字' : '大字模式';
+}
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const sections = ['flow','quiz','items','pain','contact'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 100) cur = id;
+  });
+  document.querySelectorAll('.nav-item').forEach((b, i) => {
+    b.classList.toggle('active', sections[i] === cur);
+  });
+});
+
+// ─ ORGAN SCREENER ─
+function updateOrganFlags() {
+  const hasKidney = document.getElementById('chk-kidney').checked;
+  const hasHeart  = document.getElementById('chk-heart').checked;
+
+  // highlight labels
+  document.getElementById('lbl-kidney').style.borderColor = hasKidney ? '#5295c0' : '';
+  document.getElementById('lbl-kidney').style.background  = hasKidney ? '#eef6fb' : '';
+  document.getElementById('lbl-heart').style.borderColor  = hasHeart  ? '#c0555a' : '';
+  document.getElementById('lbl-heart').style.background   = hasHeart  ? '#fdf0f0' : '';
+
+  // global notice
+  document.getElementById('organ-global-notice').style.display = (hasKidney || hasHeart) ? 'block' : 'none';
+
+  // show/hide notices in each pain card
+  document.querySelectorAll('.kidney-notice').forEach(el => {
+    el.style.display = hasKidney ? 'block' : 'none';
+  });
+  document.querySelectorAll('.heart-notice').forEach(el => {
+    el.style.display = hasHeart ? 'block' : 'none';
+  });
+
+  // auto-expand pain details that have active notices
+  if (hasKidney || hasHeart) {
+    document.querySelectorAll('.pain-detail').forEach(el => {
+      const hasVisible = (hasKidney && el.querySelector('.kidney-notice')) ||
+                         (hasHeart  && el.querySelector('.heart-notice'));
+      if (hasVisible) el.classList.add('open');
+    });
+  }
+}
+
+// ─ QUIZ ─
+const ans = { q0: null, q1: new Set(), q2: new Set() };
+let step = 0;
+
+function pick(q, val, btn) {
+  document.querySelectorAll('#step' + q + ' .quiz-opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  ans.q0 = val;
+  const nb = document.getElementById('next' + q);
+  if (nb) { nb.disabled = false; }
+}
+
+function toggle(btn, val) {
+  btn.classList.toggle('selected');
+  const qkey = btn.closest('#step1') ? 'q1' : 'q2';
+  if (btn.classList.contains('selected')) ans[qkey].add(val);
+  else ans[qkey].delete(val);
+}
+
+function gotoStep(n) {
+  document.getElementById('step' + step).style.display = 'none';
+  document.getElementById('step' + n).style.display = 'block';
+  step = n;
+  const pct = Math.round((n / 3) * 100);
+  document.getElementById('quizTrack').style.width = pct + '%';
+}
+
+function showResult() {
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('quizTrack').style.width = '100%';
+
+  const recs = [];
+  const q0 = ans.q0;
+  const q1 = ans.q1;
+  const q2 = ans.q2;
+
+  if (q0 === 'long' || q0 === 'mid' || q1.has('brain') || q1.has('elderly') || q2.has('wake_c'))
+    recs.push({ label: '麻醉腦波監測（BIS）', color: '#1d6fa4', target: 'card-bis' });
+
+  if (q1.has('ponv') || q1.has('female') || q2.has('nausea_c'))
+    recs.push({ label: '術中止吐藥（PONV 預防）', color: '#e07040', target: 'card-ponv' });
+
+  if (q0 === 'long' || q0 === 'mid' || q1.has('cold') || q1.has('elderly'))
+    recs.push({ label: '術中保溫毯', color: '#1a8f7e', target: 'card-warm' });
+
+  if (q2.has('pain_c') || q2.has('recover_c'))
+    recs.push({ label: '術後止痛方案（查看百寶袋）', color: '#6060a0', target: 'pain' });
+
+  if (q2.has('wake_c'))
+    recs.push({ label: 'Byfavo 加速清醒方案', color: '#e87fa0', target: 'pain' });
+
+  if (q0 === 'short' && q2.has('pain_c'))
+    recs.push({ label: 'One Day Pain（日間手術止痛）', color: '#3a9a5a', target: 'pain' });
+
+  if (recs.length === 0)
+    recs.push({ label: '請與麻醉科醫師討論最合適的方案', color: '#7a93a8', target: 'quiz' });
+
+  const container = document.getElementById('resultItems');
+  container.innerHTML = '';
+  recs.forEach(r => {
+    const div = document.createElement('div');
+    div.className = 'result-item';
+    div.innerHTML = `<div class="result-item-dot" style="background:${r.color}"></div><div class="result-item-text">${r.label}</div><div class="result-item-arrow">→</div>`;
+    div.onclick = () => {
+      const el = document.getElementById(r.target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('pulse');
+        setTimeout(() => el.classList.remove('pulse'), 2500);
+      }
+    };
+    container.appendChild(div);
+  });
+
+  document.getElementById('quizResult').classList.add('show');
+}
+
+function resetQuiz() {
+  ans.q0 = null; ans.q1.clear(); ans.q2.clear();
+  step = 0;
+  document.getElementById('quizResult').classList.remove('show');
+  ['step0','step1','step2'].forEach((id, i) => {
+    document.getElementById(id).style.display = i === 0 ? 'block' : 'none';
+  });
+  document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+  document.getElementById('quizTrack').style.width = '0%';
+  const nb = document.getElementById('next0');
+  if (nb) nb.disabled = true;
+}
+
+// ─ CARD EXPAND ─
+function toggleExpand(id) {
+  const exp = document.getElementById('exp-' + id);
+  const arrow = document.getElementById('arrow-' + id);
+  const isOpen = exp.classList.contains('open');
+  exp.classList.toggle('open', !isOpen);
+  arrow.classList.toggle('open', !isOpen);
+}
+
+// ─ PAIN DETAIL ─
+function togglePainDetail(id) {
+  const el = document.getElementById('pd-' + id);
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.pain-detail').forEach(d => d.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+</script>
+</body>
+</html>
